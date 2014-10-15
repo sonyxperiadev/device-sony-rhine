@@ -1,0 +1,12 @@
+key 288   BUTTON_X
+key 289   BUTTON_A
+key 290   BUTTON_B
+key 291   BUTTON_Y
+key 292   BUTTON_L1
+key 293   BUTTON_R1
+key 294   BUTTON_L2
+key 295   BUTTON_R2
+key 296   BUTTON_SELECT
+key 297   BUTTON_START
+axis 0x00 X
+axis 0x01 Y
