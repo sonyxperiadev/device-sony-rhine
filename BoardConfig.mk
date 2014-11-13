@@ -87,5 +87,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # GPS definitions for Qualcomm solution
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_NO_RPC := true
+BOARD_USES_QCOM_HARDWARE_GPS := true
 
 TARGET_SYSTEM_PROP := device/sony/rhine/system.prop
