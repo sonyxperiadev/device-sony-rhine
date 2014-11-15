@@ -24,6 +24,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)init.rhine.usb.rc:root/init.rhine.usb.rc \
     $(SONY_ROOT)init.rhine.pwr.rc:root/init.rhine.pwr.rc \
     $(SONY_ROOT)system/etc/init.rhine.bt.sh:system/etc/init.rhine.bt.sh \
+	$(SONY_ROOT)system/etc/init.rhine.wifi.sh:system/etc/init.rhine.wifi.sh \
     $(SONY_ROOT)system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)system/etc/gps.conf:system/etc/gps.conf \
     $(SONY_ROOT)system/etc/media_codecs.xml:system/etc/media_codecs.xml \
@@ -118,6 +119,7 @@ PRODUCT_PACKAGES += \
 #WLAN
 PRODUCT_PACKAGES += \
     hostapd \
+	mac-update \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
