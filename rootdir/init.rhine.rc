@@ -49,6 +49,10 @@ on init
 
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
+	
+	# start recovery-switch script
+    start recovery
+    wait /dev/.recovery_aborted 9999999
 
 on fs
     mount_all ./fstab.rhine
@@ -437,7 +441,7 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
-
+	
 # Update WIFI MAC address
 service mac-update /system/bin/mac-update
     class main
@@ -452,6 +456,16 @@ service hciattach /system/bin/sh /system/etc/init.rhine.bt.sh
     disabled
     oneshot
 
+# launched by on-init, continues if user does not want
+# to enter recovery
+service recovery /sbin/busybox_static sh /recovery.sh
+    class main
+    user root
+    group root
+    oneshot
+    seclabel u:r:recovery:s0
+    disabled
+	
 on property:bluetooth.hciattach=true
     start hciattach
 
