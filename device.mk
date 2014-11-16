@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product, device/sony/msm8974_common/common.mk)
+
 SOMC_PLATFORM := rhine
 
 DEVICE_PACKAGE_OVERLAYS += \
@@ -46,12 +48,6 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)system/usr/keylayout/mhl-rcp.kl:system/usr/keylayout/mhl-rcp.kl \
     $(SONY_ROOT)ueventd.rhine.rc:root/ueventd.rhine.rc \
     $(SONY_ROOT)/init.recovery.rhine.rc:root/init.recovery.rhine.rc
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
 	
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -98,25 +94,9 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libaudioroute
 
-#GFX
-PRODUCT_PACKAGES += \
-    gralloc.msm8974 \
-    hwcomposer.msm8974 \
-    memtrack.msm8974 \
-    libgenlock \
-    libqdutils \
-    libqdMetaData
-
 #lights
 PRODUCT_PACKAGES += \
     lights.rhine
-
-#NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    libnfc_jni \
-    libnfc \
-    Nfc
 
 #GPS
 PRODUCT_PACKAGES += \
@@ -126,56 +106,25 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     gps.msm8974
 
+#NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    libnfc_jni \
+    libnfc \
+    Nfc
+
 #WLAN
 PRODUCT_PACKAGES += \
     hostapd \
-	mac-update \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
-
-#Misc
-PRODUCT_PACKAGES += \
-    libmiscta \
-    libta \
-    tad_static \
-    ta_qmi_service
 
 #OSS
 PRODUCT_PACKAGES += \
     thermanager \
     wcnss_addr \
     bt_addr
-
-PRODUCT_PACKAGES += \
-    rmt_storage
-
-#Charger
-PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images \
-
-PRODUCT_PACKAGES += \
-    librs_jni \
-    com.android.future.usb.accessory
-
-PRODUCT_PACKAGES += \
-    Dialer \
-    Email \
-    Exchange2 \
-    InCallUI \
-    Launcher3
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    e2fsck
-
-# Platform specific tags
-#
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-# APN list
-PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \

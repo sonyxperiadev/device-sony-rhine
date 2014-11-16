@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include device/sony/msm8974_common/BoardConfigCommon.mk
+
 PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/rhine/kernel-headers
 
 TARGET_ARCH := arm
@@ -84,44 +86,6 @@ WIFI_DRIVER_MODULE_ARG := ""
 WIFI_DRIVER_MODULE_NAME := "wlan"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-BOARD_USE_SONY_MACUPDATE := true
-
-BOARD_SEPOLICY_DIRS += \
-       device/sony/rhine/sepolicy
-
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-       app.te \
-       bluetooth_loader.te \
-       bridge.te \
-       camera.te \
-       device.te \
-       domain.te \
-       file.te \
-       hostapd.te \
-       irsc_util.te \
-       mediaserver.te \
-       mpdecision.te \
-       netmgrd.te \
-       platform_app.te \
-       qmux.te \
-       radio.te \
-       rild.te \
-       rmt.te \
-       sensors.te \
-       ssr.te \
-       surfaceflinger.te \
-       system_server.te \
-       tee.te \
-       thermald.te \
-       time.te \
-       ueventd.te \
-       vss.te \
-       wpa.te \
-       file_contexts \
-       genfs_contexts \
-       te_macros
 
 # BT definitions for Qualcomm solution
 BLUETOOTH_HCI_USE_MCT := true
