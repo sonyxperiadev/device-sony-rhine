@@ -70,6 +70,10 @@ on post-fs-data
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp system /data/misc/dhcp
+	
+	# Update WIFI MAC address
+    mkdir /data/misc/wifi/prima 0775 wifi wifi
+    exec /system/bin/mac-update
 
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
@@ -150,7 +154,21 @@ on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+	exec /system/bin/sh /system/etc/init.qcom.wifi.sh
+	
 on boot
+    # Panel backlight
+    chown system system /sys/class/leds/wled:backlight/brightness
+    chmod 660 /sys/class/leds/wled:backlight/brightness
+
+	# PM8941 flash
+    chown system camera /sys/class/misc/pm8941-flash/device/current1
+    chown system camera /sys/class/misc/pm8941-flash/device/current2
+    chown system camera /sys/class/misc/pm8941-flash/device/fault_status
+    chown system camera /sys/class/misc/pm8941-flash/device/flash_timer
+    chown system camera /sys/class/misc/pm8941-flash/device/mode
+    chown system camera /sys/class/misc/pm8941-flash/device/strobe
+	
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -420,6 +438,12 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
     class late_start
     disabled
 
+# Update WIFI MAC address
+service mac-update /system/bin/mac-update
+    class main
+    user wifi
+    oneshot
+	
 #BT service
 service hciattach /system/bin/sh /system/etc/init.rhine.bt.sh
     class late_start
