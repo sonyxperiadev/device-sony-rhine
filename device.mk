@@ -29,7 +29,6 @@ PRODUCT_COPY_FILES += \
 	$(SONY_ROOT)system/etc/init.rhine.wifi.sh:system/etc/init.rhine.wifi.sh \
     $(SONY_ROOT)system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)system/etc/gps.conf:system/etc/gps.conf \
-    $(SONY_ROOT)system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)system/etc/media_profiles.xml:system/etc/media_profiles.xml \
     $(SONY_ROOT)system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     $(SONY_ROOT)system/etc/snd_soc_msm/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
