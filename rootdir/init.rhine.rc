@@ -50,7 +50,7 @@ on init
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
 	
-	# start recovery-switch script
+    # start recovery-switch script
     start recovery
     wait /dev/.recovery_aborted 9999999
 
@@ -158,12 +158,14 @@ on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
-	exec /system/bin/sh /system/etc/init.qcom.wifi.sh
+    exec /system/bin/sh /system/etc/init.qcom.wifi.sh
 	
 on boot
     # Panel backlight
     chown system system /sys/class/leds/wled:backlight/brightness
     chmod 660 /sys/class/leds/wled:backlight/brightness
+    chown system system /sys/class/leds/wled:backlight/max_brightness
+    chmod 660 /sys/class/leds/wled:backlight/max_brightness
 
 	# PM8941 flash
     chown system camera /sys/class/misc/pm8941-flash/device/current1
