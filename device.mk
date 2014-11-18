@@ -16,9 +16,6 @@ $(call inherit-product, device/sony/msm8974_common/common.mk)
 
 SOMC_PLATFORM := rhine
 
-DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/rhine/overlay
-
 SONY_ROOT = device/sony/rhine/rootdir/
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)fstab.rhine:root/fstab.rhine \
