@@ -276,6 +276,10 @@ on boot
     #WCNSS enable
     write /dev/wcnss_wlan 1
 
+    #Panel brightness
+    chown system system /sys/class/leds/wled:backlight/brightness
+    chmod 660 /sys/class/leds/wled:backlight/brightness
+
 #SONY misc
 service tad_static /system/bin/tad_static /dev/block/mmcblk0 1,16
     user root
