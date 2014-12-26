@@ -61,7 +61,7 @@
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
     <string translatable="false" name="config_ntpServer">ntp.nict.jp</string>
     <string name="config_useragentprofile_url">http://uaprof.sonymobile.com/%sR1002.xml</string>
-    <bool name="config_animateScreenLights">true</bool>
+    <bool name="config_animateScreenLights">false</bool>
     <color name="config_defaultNotificationColor">#ffffffff</color>
     <bool name="config_intrusiveNotificationLed">true</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
