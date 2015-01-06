@@ -92,3 +92,6 @@ TARGET_NO_RPC := true
 BOARD_USES_QCOM_HARDWARE_GPS := true
 
 TARGET_SYSTEM_PROP := device/sony/rhine/system.prop
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
