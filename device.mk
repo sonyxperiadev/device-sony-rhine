@@ -25,6 +25,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)init.rhine.pwr.rc:root/init.rhine.pwr.rc \
     $(SONY_ROOT)system/etc/init.rhine.bt.sh:system/etc/init.rhine.bt.sh \
     $(SONY_ROOT)system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(SONY_ROOT)system/etc/audio_effects.conf:system/etc/audio_effects.conf \
     $(SONY_ROOT)system/etc/gps.conf:system/etc/gps.conf \
     $(SONY_ROOT)system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)system/etc/media_profiles.xml:system/etc/media_profiles.xml \
@@ -47,6 +48,9 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.recovery.rhine.rc:root/init.recovery.rhine.rc
 
 PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
@@ -79,13 +83,20 @@ PRODUCT_PACKAGES += \
     libacdbmapper \
     libaudcal \
     libaudioalsa \
-    libdiag
+    libdiag 
 
 # for audio.primary.msm8974
 PRODUCT_PACKAGES += \
     libtinyalsa \
     libtinycompress \
     libaudioroute
+
+# Audio effects
+PRODUCT_PACKAGES += \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcomvoiceprocessingdescriptors \
+    libqcompostprocbundle
 
 #GFX
 PRODUCT_PACKAGES += \
@@ -95,6 +106,15 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libqdutils \
     libqdMetaData
+
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libstagefrighthw \
+    libOmxCore \
+    libmm-omxcore \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc
 
 #lights
 PRODUCT_PACKAGES += \
@@ -173,3 +193,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
+
+# Audio Configuration
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.audio.handset.mic.type=digital \
+persist.audio.dualmic.config=endfire \
+persist.audio.fluence.voicecall=true \
+persist.audio.fluence.voicecomm=true \
+persist.audio.fluence.voicerec=false \
+persist.audio.fluence.speaker=false
