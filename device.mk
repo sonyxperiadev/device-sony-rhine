@@ -132,6 +132,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+PRODUCT_PACKAGES += \
+    keystore.msm8974
+
 #Misc
 PRODUCT_PACKAGES += \
     libmiscta \
