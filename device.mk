@@ -17,34 +17,30 @@ SOMC_PLATFORM := rhine
 DEVICE_PACKAGE_OVERLAYS += \
     device/sony/rhine/overlay
 
-SONY_ROOT = device/sony/rhine/rootdir/
+SONY_ROOT = device/sony/rhine/rootdir
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)fstab.rhine:root/fstab.rhine \
-    $(SONY_ROOT)init.rhine.rc:root/init.rhine.rc \
-    $(SONY_ROOT)init.rhine.usb.rc:root/init.rhine.usb.rc \
-    $(SONY_ROOT)init.rhine.pwr.rc:root/init.rhine.pwr.rc \
-    $(SONY_ROOT)system/etc/init.rhine.bt.sh:system/etc/init.rhine.bt.sh \
-    $(SONY_ROOT)system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-    $(SONY_ROOT)system/etc/gps.conf:system/etc/gps.conf \
-    $(SONY_ROOT)system/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(SONY_ROOT)system/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    $(SONY_ROOT)system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    $(SONY_ROOT)system/etc/snd_soc_msm/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
-    $(SONY_ROOT)system/etc/snd_soc_msm/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
-    $(SONY_ROOT)system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(SONY_ROOT)system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(SONY_ROOT)system/usr/idc/clearpad.idc:system/usr/idc/clearpad.idc \
-    $(SONY_ROOT)system/usr/idc/max1187x_touchscreen_0.idc:system/usr/idc/max1187x_touchscreen_0.idc \
-    $(SONY_ROOT)system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl \
-    $(SONY_ROOT)system/usr/keylayout/Vendor_045e_Product_0719.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl \
-    $(SONY_ROOT)system/usr/keylayout/Vendor_046d_Product_c21a.kl:system/usr/keylayout/Vendor_046d_Product_c21a.kl \
-    $(SONY_ROOT)system/usr/keylayout/Vendor_046d_Product_c21d.kl:system/usr/keylayout/Vendor_046d_Product_c21d.kl \
-    $(SONY_ROOT)system/usr/keylayout/Vendor_0810_Product_0002.kl:system/usr/keylayout/Vendor_0810_Product_0002.kl \
-    $(SONY_ROOT)system/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-    $(SONY_ROOT)system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(SONY_ROOT)system/usr/keylayout/mhl-rcp.kl:system/usr/keylayout/mhl-rcp.kl \
-    $(SONY_ROOT)ueventd.rhine.rc:root/ueventd.rhine.rc \
-    $(SONY_ROOT)/init.recovery.rhine.rc:root/init.recovery.rhine.rc
+    $(SONY_ROOT)/fstab.rhine:root/fstab.rhine \
+    $(SONY_ROOT)/init.rhine.rc:root/init.rhine.rc \
+    $(SONY_ROOT)/init.rhine.usb.rc:root/init.rhine.usb.rc \
+    $(SONY_ROOT)/init.rhine.pwr.rc:root/init.rhine.pwr.rc \
+    $(SONY_ROOT)/system/etc/init.rhine.bt.sh:system/etc/init.rhine.bt.sh \
+    $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf \
+    $(SONY_ROOT)/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
+    $(SONY_ROOT)/system/etc/snd_soc_msm/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
+    $(SONY_ROOT)/system/etc/snd_soc_msm/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
+    $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(SONY_ROOT)/system/usr/idc/clearpad.idc:system/usr/idc/clearpad.idc \
+    $(SONY_ROOT)/system/usr/idc/max1187x_touchscreen_0.idc:system/usr/idc/max1187x_touchscreen_0.idc \
+    $(SONY_ROOT)/system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl \
+    $(SONY_ROOT)/system/usr/keylayout/Vendor_045e_Product_0719.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl \
+    $(SONY_ROOT)/system/usr/keylayout/Vendor_046d_Product_c21a.kl:system/usr/keylayout/Vendor_046d_Product_c21a.kl \
+    $(SONY_ROOT)/system/usr/keylayout/Vendor_046d_Product_c21d.kl:system/usr/keylayout/Vendor_046d_Product_c21d.kl \
+    $(SONY_ROOT)/system/usr/keylayout/Vendor_0810_Product_0002.kl:system/usr/keylayout/Vendor_0810_Product_0002.kl \
+    $(SONY_ROOT)/system/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+    $(SONY_ROOT)/system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(SONY_ROOT)/system/usr/keylayout/mhl-rcp.kl:system/usr/keylayout/mhl-rcp.kl \
+    $(SONY_ROOT)/ueventd.rhine.rc:root/ueventd.rhine.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -67,6 +63,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.google.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 #Audio
 PRODUCT_PACKAGES += \
