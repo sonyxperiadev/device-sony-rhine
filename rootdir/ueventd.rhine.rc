@@ -108,10 +108,6 @@
 /sys/devices/virtual/input/input* single        0200  system  system
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
 
-/sys/devices/virtual/graphics/fb1 hpd 0644 system system
-/sys/devices/virtual/graphics/fb1 vendor_name  0644 system system
-/sys/devices/virtual/graphics/fb1 product_description  0644 system system
-
 /sys/devices/01-qcom,leds-d000/leds/led:* max_brightness 0644 root system
 /sys/devices/01-qcom,leds-d000/leds/led:* brightness 0664 system system
 /sys/devices/01-qcom,leds-d000/leds/led:* lut_pwm 0664 system system
@@ -132,7 +128,7 @@
 /sys/devices/virtual/graphics/fb1/format_3d           0664 system system
 /sys/devices/virtual/graphics/fb1/vendor_name         0664 system graphics
 /sys/devices/virtual/graphics/fb1/product_description 0664 system graphics
-/sys/devices/platform/msm_sdcc.1/polling              0664  system system
+/sys/devices/platform/msm_sdcc.1/polling              0664 system system
 /sys/devices/platform/msm_sdcc.2/polling              0664 system system
 /sys/devices/platform/msm_sdcc.3/polling              0664 system system
 /sys/devices/platform/msm_sdcc.4/polling              0664 system system
