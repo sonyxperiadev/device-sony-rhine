@@ -93,3 +93,7 @@ TARGET_SYSTEM_PROP := device/sony/rhine/system.prop
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Enable dex-preoptimization to speed up first boot sequence
+      WITH_DEXPREOPT := true
+
