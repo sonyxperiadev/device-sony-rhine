@@ -427,9 +427,9 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
 
 #BT service
 service hciattach /system/bin/sh /system/etc/init.rhine.bt.sh
-    class late_start
+    class main
     user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin system
+    group bluetooth system
     disabled
     oneshot
 

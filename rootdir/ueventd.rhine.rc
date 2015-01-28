@@ -124,6 +124,7 @@
 
 /dev/ttyHS0                                           0660 bluetooth bluetooth
 /dev/ttyHS2                                           0660 bluetooth bluetooth
+/sys/module/hci_smd/parameters/hcismd_set             0660 bluetooth bluetooth
 /sys/devices/platform/msm_serial_hs.0/clock           0660 bluetooth bluetooth
 /sys/devices/virtual/hsicctl/hsicctl0/modem_wait      0666 radio radio
 /sys/devices/platform/msm_hsusb/gadget/usb_state      0444 system system
