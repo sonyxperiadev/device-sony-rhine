@@ -1,17 +1,47 @@
-/dev/adsprpc-smd          0664   system     system
-/dev/diag                 0660   system     qcom_diag
-/dev/felica_vdev          0600  felica       felica
-/dev/felica_vsub          0660  felica       nfc
 /dev/genlock              0666   system     system
-/dev/hw_random            0660   system     system
-/dev/i2c-5                0660   media       media
+/dev/kgsl-3d0             0666   system     system
 /dev/ion                  0664   system     system
+/dev/rtc0                 0600   system     system
+/dev/smd0                 0660   system     system
+/dev/smd3                 0660   bluetooth  net_bt_stack
+/dev/smd2                 0660   bluetooth  net_bt_stack
+/dev/smd4                 0660   system     system
+/dev/smd_cxm_qmi          0640   radio      radio
+/dev/smd5                 0660   system     system
+/dev/smd6                 0660   system     system
+/dev/smd7                 0660   bluetooth  bluetooth
+/dev/smd11                0660   radio      radio
+/dev/radio0               0640   system     system
+/dev/rfcomm0              0660   bluetooth  bluetooth
+/dev/smdcntl0             0640   radio      radio
+/dev/smdcntl1             0640   radio      radio
+/dev/smdcntl2             0640   radio      radio
+/dev/smdcntl3             0640   radio      radio
+/dev/smdcntl4             0640   radio      radio
+/dev/smdcntl5             0640   radio      radio
+/dev/smdcntl6             0640   radio      radio
+/dev/smdcntl7             0640   radio      radio
+/dev/smdcnt_rev0          0640   radio      radio
+/dev/smdcnt_rev1          0640   radio      radio
+/dev/smdcnt_rev2          0640   radio      radio
+/dev/smdcnt_rev3          0640   radio      radio
+/dev/smdcnt_rev4          0640   radio      radio
+/dev/smdcnt_rev5          0640   radio      radio
+/dev/smdcnt_rev6          0640   radio      radio
+/dev/smdcnt_rev7          0640   radio      radio
+/dev/smdcnt_rev8          0640   radio      radio
+/dev/smuxctl32            0640   radio      radio
+/dev/rmnet_mux_ctrl       0640   radio      radio
+/dev/video*               0660   system     camera
+/dev/media*               0660   system     camera
+/dev/v4l-subdev*          0660   system     camera
+/dev/qseecom              0660   system     drmrpc
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
 /dev/jpeg2                0660   system     camera
-/dev/kgsl-3d0             0666   system     system
-/dev/mdm                  0660   system     radio
-/dev/media*               0660   system     camera
+/dev/msm_rotator          0660   system     system
+/dev/hw_random            0660   system     system
+/dev/adsprpc-smd          0664   system     system
 /dev/msm_a2dp_in          0660   system     audio
 /dev/msm_aac              0660   system     audio
 /dev/msm_aac_in           0660   system     audio
@@ -32,7 +62,6 @@
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_qcelp_in         0660   system     audio
-/dev/msm_rotator          0660   system     system
 /dev/msm_rtac             0660   system     audio
 /dev/msm_vidc_dec         0660   system     audio
 /dev/msm_vidc_dec_sec     0660   system     audio
@@ -41,106 +70,48 @@
 /dev/msm_voicememo        0660   system     audio
 /dev/msm_wma              0660   system     audio
 /dev/msm_wmapro           0660   system     audio
-/dev/pn544                0600   nfc         nfc
-/dev/qseecom              0660   system     drmrpc
-/dev/radio0               0640   fm_radio   fm_radio
-/dev/rfcomm0              0660   bluetooth  bluetooth
-/dev/rfkill               0660   wifi       wifi
-/dev/rmnet_mux_ctrl       0640   radio      radio
-/dev/rtc0                 0600   system     system
-/dev/smd0                 0660   system     system
-/dev/smd2                 0660   bluetooth  bluetooth
-/dev/smd3                 0660   bluetooth  bluetooth
-/dev/smd4                 0660   system     system
-/dev/smd5                 0660   system     system
-/dev/smd6                 0660   system     system
-/dev/smd7                 0660   bluetooth  bluetooth
-/dev/smd_cxm_qmi          0640   radio      radio
-/dev/smdcntl0             0640   radio      radio
-/dev/smdcntl1             0640   radio      radio
-/dev/smdcntl2             0640   radio      radio
-/dev/smdcntl3             0640   radio      radio
-/dev/smdcntl4             0640   radio      radio
-/dev/smdcntl5             0640   radio      radio
-/dev/smdcntl6             0640   radio      radio
-/dev/smdcntl7             0640   radio      radio
-/dev/smuxctl32            0640   radio      radio
-/dev/ttyGS0               0660   system     system
 /dev/ttyHSL1              0660   system     system
+/dev/sdio_tty_ciq_00      0660   system     system
 /dev/tty_sdio_00          0660   system     system
-/dev/v4l-subdev*          0660   system     camera
-/dev/video*               0660   system     camera
+/dev/ttyGS0               0660   system     system
+/dev/i2c-5                0660   media      media
+/dev/voice_svc            0660   system     audio
+/sys/devices/virtual/smdpkt/smdcntl* open_timeout 0664 radio  radio
+
+# BT
+/dev/hidraw*                                0666 system    system
+/dev/rfkill                                 0660 wifi      wifi
+/dev/ttyHS0                                 0660 bluetooth bluetooth
+/dev/ttyHS2                                 0660 bluetooth bluetooth
+/sys/module/hci_smd/parameters/hcismd_set   0660 bluetooth bluetooth
+/sys/devices/platform/msm_serial_hs.0/clock 0660 bluetooth bluetooth
+
+# WLAN
 /dev/wcnss_wlan           0660   system     system
-/sys/devices/f9967000.i2c/i2c-4/4-0072/mhl/sii8334    mouse_mode   0660  system  system
-/sys/devices/f9967000.i2c/i2c-4/4-0072/mhl/sii8334    mouse_move_distance_dx   0660  system  system
-/sys/devices/f9967000.i2c/i2c-4/4-0072/mhl/sii8334    mouse_move_distance_dy   0660  system  system
-/sys/devices/f9967000.i2c/i2c-4/4-0072/mhl/sii8334    screen_status 0660  system  system
-/sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
-/sys/devices/virtual/bst/bma* bandwidth         0600  system  system
-/sys/devices/virtual/bst/bma* delay             0600  system  system
-/sys/devices/virtual/bst/bma* enable            0600  system  system
-/sys/devices/virtual/bst/bma* mode              0600  system  system
-/sys/devices/virtual/bst/bma* offset_x          0600  system  system
-/sys/devices/virtual/bst/bma* offset_y          0600  system  system
-/sys/devices/virtual/bst/bma* offset_z          0600  system  system
-/sys/devices/virtual/bst/bma* range             0600  system  system
-/sys/devices/virtual/bst/bma* value             0400  system  system
-/sys/devices/virtual/bst/bmg* bandwidth         0600  system  system
-/sys/devices/virtual/bst/bmg* delay             0600  system  system
-/sys/devices/virtual/bst/bmg* enable            0600  system  system
-/sys/devices/virtual/bst/bmg* offset_x          0600  system  system
-/sys/devices/virtual/bst/bmg* offset_y          0600  system  system
-/sys/devices/virtual/bst/bmg* offset_z          0600  system  system
-/sys/devices/virtual/bst/bmg* op_mode           0600  system  system
-/sys/devices/virtual/bst/bmg* range             0600  system  system
-/sys/devices/virtual/bst/bmg* value             0400  system  system
-/sys/devices/virtual/input/input* als_adc_data   0444  system  system
-/sys/devices/virtual/input/input* continuous    0200  system  system
-/sys/devices/virtual/input/input* interval      0600  system  system
-/sys/devices/virtual/input/input* obit          0600  system  system
-/sys/devices/virtual/input/input* prx_hith       0200  system  system
-/sys/devices/virtual/input/input* prx_loth       0200  system  system
-/sys/devices/virtual/input/input* prx_ppulse     0200  system  system
-/sys/devices/virtual/input/input* regacc        0600  system  system
-/sys/devices/virtual/input/input* registers     0400  system  system
-/sys/devices/virtual/input/input* reset         0200  system  system
-/sys/devices/virtual/input/input* selftest      0600  system  system
-/sys/devices/virtual/input/input* single        0200  system  system
-/sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
+/dev/wcnss_ctrl           0660   system     system
 
-/sys/devices/01-qcom,leds-d000/leds/led:* max_brightness 0644 root system
-/sys/devices/01-qcom,leds-d000/leds/led:* brightness 0664 system system
-/sys/devices/01-qcom,leds-d000/leds/led:* lut_pwm 0664 system system
-/sys/devices/01-qcom,leds-d000/leds/led:* step_duration 0664 system system
-/sys/devices/01-qcom,leds-d000/leds/rgb start_blink 0220 system system
-/sys/devices/01-qcom,leds-d000/leds/rgb sync_state 0664 system system
-/sys/devices/01-qcom,leds-d800/leds/wled:backlight max_brightness 0644 root system
-/sys/devices/01-qcom,leds-d800/leds/wled:backlight brightness 0664 system system
+# NFC
+/dev/nfc-nci              0660   nfc        nfc
+/dev/pn544                0660   nfc        nfc
+/dev/pn547                0660   nfc        nfc
 
+# LED
+/sys/devices/01-qcom,leds-d000/leds/led:* max_brightness          0644 root system
+/sys/devices/01-qcom,leds-d000/leds/led:* brightness              0664 system system
+/sys/devices/01-qcom,leds-d000/leds/led:* lut_pwm                 0664 system system
+/sys/devices/01-qcom,leds-d000/leds/led:* step_duration           0664 system system
+/sys/devices/01-qcom,leds-d000/leds/rgb start_blink               0220 system system
+/sys/devices/01-qcom,leds-d000/leds/rgb sync_state                0664 system system
+/sys/devices/01-qcom,leds-d800/leds/wled:backlight max_brightness 0664 system system
+/sys/devices/01-qcom,leds-d800/leds/wled:backlight brightness     0664 system system
 
-/dev/ttyHS0                                           0660 bluetooth bluetooth
-/dev/ttyHS2                                           0660 bluetooth bluetooth
-/sys/module/hci_smd/parameters/hcismd_set             0660 bluetooth bluetooth
-/sys/devices/platform/msm_serial_hs.0/clock           0660 bluetooth bluetooth
-/sys/devices/virtual/hsicctl/hsicctl0/modem_wait      0666 radio radio
-/sys/devices/platform/msm_hsusb/gadget/usb_state      0444 system system
+# IR Remote
+/dev/ttyHSL2 0660 system system /sys/devices/platform/ir_remote_control enable 0220 system system 
+
 /sys/devices/virtual/graphics/fb1/hpd                 0664 system graphics
 /sys/devices/virtual/graphics/fb1/video_mode          0664 system graphics
 /sys/devices/virtual/graphics/fb1/format_3d           0664 system system
 /sys/devices/virtual/graphics/fb1/vendor_name         0664 system graphics
 /sys/devices/virtual/graphics/fb1/product_description 0664 system graphics
-/sys/devices/platform/msm_sdcc.1/polling              0664 system system
-/sys/devices/platform/msm_sdcc.2/polling              0664 system system
-/sys/devices/platform/msm_sdcc.3/polling              0664 system system
-/sys/devices/platform/msm_sdcc.4/polling              0664 system system
 /sys/devices/sony_camera_0/info                       0666 camera camera
 /sys/devices/sony_camera_1/info                       0666 camera camera
-/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 0666 system system
-/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 0666 system system
-/sys/devices/system/cpu/mfreq                         0220 root system
-/sys/devices/system/cpu/cpu1/online                   0664 root system
-/sys/devices/system/cpu/cpu2/online                   0664 root system
-/sys/devices/system/cpu/cpu3/online                   0664 root system
-
-# IR Remote
-/dev/ttyHSL2 0660 system system /sys/devices/platform/ir_remote_control enable 0220 system system 
