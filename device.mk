@@ -24,6 +24,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.rhine.usb.rc:root/init.rhine.usb.rc \
     $(SONY_ROOT)/init.rhine.pwr.rc:root/init.rhine.pwr.rc \
     $(SONY_ROOT)/system/etc/init.rhine.bt.sh:system/etc/init.rhine.bt.sh \
+    $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
     $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf \
     $(SONY_ROOT)/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     $(SONY_ROOT)/system/etc/snd_soc_msm/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
