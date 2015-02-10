@@ -348,12 +348,6 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     user root
     group root
 
-#GNSS/Sensor interface daemon
-service gsiff_daemon /system/bin/gsiff_daemon
-    class late_start
-    user gps
-    group gps net_raw misc
-
 #OSS WLAN setup
 service wcnss_addr /system/bin/wcnss_addr /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
     class main
