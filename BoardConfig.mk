@@ -39,6 +39,7 @@ BOARD_MKBOOTIMG_ARGS += --dt_dir device/sony/$(TARGET_DEVICE)/dtbs
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=rhine user_debug=31 maxcpus=2 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=192598
 BOARD_KERNEL_CMDLINE += dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y console=ttyHSL0,115200,n8
+BOARD_KERNEL_CMDLINE += coherent_pool=8M mem=1920M
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
