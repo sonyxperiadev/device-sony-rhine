@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "lights.msm8974"
+#define LOG_TAG "lights.rhine"
 
 #include <cutils/log.h>
 #include <stdint.h>
@@ -53,28 +53,33 @@ enum led_ident {
 
 static struct led_desc {
 	int max_brightness;
+	const char *max_brightness_s;
 	const char *brightness;
 	const char *pwm;
 	const char *step;
 } led_descs[] = {
 	[LED_BACKLIGHT] = {
 		.max_brightness = 0,
+		.max_brightness_s = "/sys/class/leds/wled:backlight/max_brightness",
 		.brightness = "/sys/class/leds/wled:backlight/brightness",
 	},
 	[LED_RED] = {
 		.max_brightness = 0,
+		.max_brightness_s = "/sys/class/leds/led:rgb_red/max_brightness",
 		.brightness = "/sys/class/leds/led:rgb_red/brightness",
 		.pwm = "/sys/class/leds/led:rgb_red/lut_pwm",
 		.step = "/sys/class/leds/led:rgb_red/step_duration",
 	},
 	[LED_GREEN] = {
 		.max_brightness = 0,
+		.max_brightness_s = "/sys/class/leds/led:rgb_green/max_brightness",
 		.brightness = "/sys/class/leds/led:rgb_green/brightness",
 		.pwm = "/sys/class/leds/led:rgb_green/lut_pwm",
 		.step = "/sys/class/leds/led:rgb_green/step_duration",
 	},
 	[LED_BLUE] = {
 		.max_brightness = 0,
+		.max_brightness_s = "/sys/class/leds/led:rgb_blue/max_brightness",
 		.brightness = "/sys/class/leds/led:rgb_blue/brightness",
 		.pwm = "/sys/class/leds/led:rgb_blue/lut_pwm",
 		.step = "/sys/class/leds/led:rgb_blue/step_duration",
@@ -209,17 +214,18 @@ static int read_int(const char *path)
 static void write_led_scaled(enum led_ident id, int brightness,
 		const char *pwm, unsigned int duration)
 {
+	int max_brightness = read_int(led_descs[id].max_brightness_s);
 	int scaled;
 
-	if (led_descs[id].max_brightness <= 0)
-		scaled = brightness;
+	if (brightness > max_brightness)
+		scaled = max_brightness;
 	else
-		scaled = brightness * led_descs[id].max_brightness / 255;
+		scaled = brightness;
 
-	if (scaled != 0) {
-		if (pwm && led_descs[id].pwm)
-			write_string(led_descs[id].pwm, pwm);
+	if (pwm && led_descs[id].pwm)
+		write_string(led_descs[id].pwm, pwm);
 
+	if(duration!=0) {
 		if (led_descs[id].step)
 			write_int(led_descs[id].step, duration);
 	}
@@ -241,10 +247,8 @@ static int rgb_to_brightness(struct light_state_t const* state)
 
 static int set_light_backlight(struct light_device_t *dev, struct light_state_t const *state)
 {
-	int brightness = rgb_to_brightness(state);
-
 	pthread_mutex_lock(&g_lock);
-	write_led_scaled(LED_BACKLIGHT, brightness, NULL, 0);
+	write_led_scaled(LED_BACKLIGHT, rgb_to_brightness(state), NULL, 0);
 	pthread_mutex_unlock(&g_lock);
 
 	return 0;
