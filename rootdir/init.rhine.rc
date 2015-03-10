@@ -350,16 +350,9 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     group root
 
 #OSS WLAN setup
-service wcnss_addr /system/bin/wcnss_addr /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+service addrsetup /system/bin/addrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
     class main
     user root
-    oneshot
-
-#OSS BT setup
-service bt_addr /system/bin/bt_addr
-    class late_start
-    user root
-    group root
     oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \

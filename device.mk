@@ -156,8 +156,7 @@ PRODUCT_PACKAGES += \
 #OSS
 PRODUCT_PACKAGES += \
     thermanager \
-    wcnss_addr \
-    bt_addr
+    addrsetup
 
 PRODUCT_PACKAGES += \
     rmt_storage
