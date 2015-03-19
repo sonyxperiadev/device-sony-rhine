@@ -62,6 +62,9 @@ BOARD_EGL_CFG := device/sony/rhine/rootdir/system/lib/egl/egl.cfg
 
 BOARD_USES_ALSA_AUDIO := true
 
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := device/sony/rhine/cryptfs_hw
+
 TARGET_USES_ION := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
