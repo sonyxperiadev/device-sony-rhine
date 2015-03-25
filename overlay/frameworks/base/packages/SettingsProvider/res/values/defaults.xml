@@ -17,7 +17,5 @@
  */
 -->
 <resources>
-    <integer name="def_screen_off_timeout">30000</integer>
-    <integer name="def_screen_brightness">149</integer>
     <bool name="def_screen_brightness_automatic_mode">true</bool>
 </resources>
