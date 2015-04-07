@@ -18,10 +18,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     device/sony/rhine/overlay
 
 SONY_ROOT = device/sony/rhine/rootdir
+
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.rhine:root/fstab.rhine \
     $(SONY_ROOT)/init.rhine.rc:root/init.rhine.rc \
-    $(SONY_ROOT)/init.rhine.usb.rc:root/init.rhine.usb.rc \
     $(SONY_ROOT)/init.rhine.pwr.rc:root/init.rhine.pwr.rc \
     $(SONY_ROOT)/system/etc/init.rhine.bt.sh:system/etc/init.rhine.bt.sh \
     $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
