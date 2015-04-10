@@ -46,14 +46,12 @@ case $POWER_CLASS in
      logi "Power Class: To override, Before turning BT ON; setprop qcom.bt.dev_power_class <1 or 2 or 3>";;
 esac
 
-echo 1 > /sys/module/hci_smd/parameters/hcismd_set
 if [$BDADDR == ""]
 then
-/system/bin/hci_qcomm_init -e $PWR_CLASS -vv &
+/system/bin/hci_qcomm_init -e $PWR_CLASS -vv
 else
-/system/bin/hci_qcomm_init --enable-clock-sharing -b $BDADDR -e $PWR_CLASS -vv &
+/system/bin/hci_qcomm_init --enable-clock-sharing -b $BDADDR -e $PWR_CLASS -vv
 fi
-echo 0 > /sys/module/hci_smd/parameters/hcismd_set
 
 case $? in
   0) logi "Bluetooth QSoC firmware download succeeded, $PWR_CLASS $BDADDR $TRANSPORT";;
