@@ -21,6 +21,7 @@ ro.com.google.clientidbase=android-sonyericsson
 ro.hwui.text_small_cache_width=2048
 ro.hwui.texture_cache_size=128.0f
 ro.opengles.version=196608
+mm.enable.smoothstreaming=true
 ro.telephony.default_network=9
 telephony.lteOnCdmaDevice=0
 wifi.interface=wlan0
