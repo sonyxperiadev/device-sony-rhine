@@ -8,6 +8,7 @@ ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
+media.aac_51_output_enabled=true
 persist.fuse_sdcard=true
 persist.gralloc.cp.level3=1
 persist.hwc.mdpcomp.enable=true
