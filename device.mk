@@ -88,7 +88,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyalsa \
     libtinycompress \
-    libaudioroute
+    libaudioroute \
+    libtinymix
 
 # Audio effects
 PRODUCT_PACKAGES += \
