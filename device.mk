@@ -27,8 +27,6 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
     $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf \
     $(SONY_ROOT)/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    $(SONY_ROOT)/system/etc/snd_soc_msm/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
-    $(SONY_ROOT)/system/etc/snd_soc_msm/snd_soc_msm_Taiko:system/etc/snd_soc_msm/snd_soc_msm_Taiko \
     $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(SONY_ROOT)/system/usr/idc/clearpad.idc:system/usr/idc/clearpad.idc \
