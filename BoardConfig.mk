@@ -58,7 +58,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_EGL_CFG := device/sony/rhine/rootdir/system/lib/egl/egl.cfg
 
+# Audio
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
 TARGET_USES_ION := true
 USE_DEVICE_SPECIFIC_CAMERA := true
