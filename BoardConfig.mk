@@ -56,6 +56,7 @@ TARGET_USES_C2D_COMPOSITION := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 BOARD_EGL_CFG := device/sony/rhine/rootdir/system/lib/egl/egl.cfg
 
 # Audio
