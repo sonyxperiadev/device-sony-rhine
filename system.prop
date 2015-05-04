@@ -12,6 +12,7 @@ media.aac_51_output_enabled=true
 persist.fuse_sdcard=true
 persist.gralloc.cp.level3=1
 persist.hwc.mdpcomp.enable=true
+vidc.debug.level=1
 persist.radio.oem_socket=false
 ril.subscription.types=NV,RUIM
 rild.libargs=-d /dev/smd0
