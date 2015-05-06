@@ -1,29 +1,37 @@
-debug.composition.type=c2d
-debug.egl.hw=1
-debug.enable.wl_log=1
-debug.mdpcomp.logs=0
-debug.sf.hw=1
-dev.pm.dyn_samplingrate=1
-ro.qc.sdk.audio.fluencetype=none
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-media.aac_51_output_enabled=true
-persist.fuse_sdcard=true
-persist.gralloc.cp.level3=1
-persist.hwc.mdpcomp.enable=true
-persist.radio.oem_socket=false
-ril.subscription.types=NV,RUIM
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
-rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
-ro.bt.bdaddr_path=/data/etc/bluetooth_bdaddr
+ril.subscription.types=NV,RUIM
+
+# system props for the data modules
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
-ro.com.android.dataroaming=false
-ro.com.google.clientidbase.ms=android-sonymobile
-ro.com.google.clientidbase=android-sonyericsson
+ro.data.large_tcp_window_size=true
+
+# Enable Power save functionality for modem
+persist.radio.add_power_save=1
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.oem_socket=false
+
+#Ringer
+ro.telephony.call_ring.multiple=false
+
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=0
+
+#BT address
+ro.bt.bdaddr_path=/data/etc/bluetooth_bdaddr
+
+# system prop for opengles version
+# 196608 is decimal for 0x30000 to report version 3
 ro.opengles.version=196608
-mm.enable.smoothstreaming=true
+
+debug.sf.hw=1
+debug.composition.type=c2d
+persist.hwc.mdpcomp.enable=true
+debug.mdpcomp.logs=0
+persist.demo.hdmirotationlock=false
+
 ro.hwui.texture_cache_size=48
 ro.hwui.layer_cache_size=32
 ro.hwui.r_buffer_cache_size=4
@@ -35,10 +43,24 @@ ro.hwui.text_small_cache_width=1024
 ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
-ro.telephony.default_network=9
-telephony.lteOnCdmaDevice=0
+
+# VIDC: debug_levels
+# 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
+vidc.debug.level=1
+
+#fluencetype can be "fluence" or "fluencepro" or "none"
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+
+# system prop for NFC DT
+ro.nfc.port=I2C
+
+#property to enable user to access Google WFD settings.
+persist.debug.wfd.enable=1
+
+#property to choose between virtual/external wfd display
+persist.sys.wfd.virtual=0
+
 wifi.interface=wlan0
-ro.telephony.call_ring.multiple=false
-ro.ril.transmitpower=true
-persist.radio.add_power_save=1
-persist.radio.apm_sim_not_pwdn=1
+
