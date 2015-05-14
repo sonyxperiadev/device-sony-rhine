@@ -151,16 +151,26 @@ on boot
     write /sys/devices/system/cpu/cpu3/online 1
     write /sys/module/msm_thermal/core_control/enabled 1
 
-    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
-    chown system system /sys/module/sco/parameters/disable_esco
-    chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
-    chmod 0660 /sys/module/bluetooth_power/parameters/power
-    chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
+    # bluetooth device
+    chown bluetooth net_bt_stack /dev/ttyHSL0
+    chmod 0600 /dev/ttyHSL0
+
+    # bluetooth DUN port-bridge
+    chmod 0660 /dev/smd7
+    chown bluetooth net_bt_stack /dev/smd7
+
+    # bluetooth modules
+    chown system system /sys/module/bluetooth/parameters/disable_ertm
+    chown system system /sys/module/bluetooth/parameters/disable_esco
+    chown system system /sys/module/bluetooth/parameters/enable_hs
+    chmod 0644 /sys/module/bluetooth/parameters/disable_ertm
+    chmod 0644 /sys/module/bluetooth/parameters/disable_esco
+    chmod 0644 /sys/module/bluetooth/parameters/enable_hs
+
+    # bluetooth rfkill
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/state
-    chmod 0660 /proc/bluetooth/sleep/proto
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -183,10 +193,6 @@ on boot
     # port-bridge
     chmod 0660 /dev/smd0
     chown system system /dev/smd0
-
-    # BT DUN port-bridge
-    chmod 0660 /dev/smd7
-    chown bluetooth bluetooth /dev/smd7
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
