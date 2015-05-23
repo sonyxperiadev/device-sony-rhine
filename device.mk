@@ -179,6 +179,9 @@ PRODUCT_PACKAGES += \
     InCallUI \
     Launcher3
 
+PRODUCT_PACKAGES += \
+    libemoji
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck
