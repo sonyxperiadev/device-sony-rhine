@@ -154,6 +154,11 @@ PRODUCT_PACKAGES += \
     libqomx_core \
     camera.msm8974
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.msm8994
+
+# Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8974
 
