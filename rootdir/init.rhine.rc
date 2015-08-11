@@ -383,7 +383,7 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     group root
 
 #OSS WLAN setup
-service addrsetup /system/bin/addrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
     class main
     user root
     oneshot

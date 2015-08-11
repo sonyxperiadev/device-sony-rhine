@@ -166,7 +166,7 @@ PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep \
     thermanager \
-    addrsetup
+    macaddrsetup
 
 PRODUCT_PACKAGES += \
     rmt_storage
