@@ -48,9 +48,9 @@ esac
 
 if [$BDADDR == ""]
 then
-/system/bin/hci_qcomm_init -e $PWR_CLASS -vv
+/system/vendor/bin/hci_qcomm_init -e $PWR_CLASS -vv
 else
-/system/bin/hci_qcomm_init --enable-clock-sharing -b $BDADDR -e $PWR_CLASS -vv
+/system/vendor/bin/hci_qcomm_init --enable-clock-sharing -b $BDADDR -e $PWR_CLASS -vv
 fi
 
 case $? in
