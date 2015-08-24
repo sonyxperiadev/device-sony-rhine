@@ -120,7 +120,6 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libmm-omxcore \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVenc
 
 #lights
