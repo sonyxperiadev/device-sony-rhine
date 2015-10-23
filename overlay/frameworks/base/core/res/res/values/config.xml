@@ -140,4 +140,8 @@
 
     <!-- SD Card can be removed without removing battery -->
     <bool name="config_batterySdCardAccessibility">true</bool>
+    
+    <!-- Doze -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+    
 </resources>
