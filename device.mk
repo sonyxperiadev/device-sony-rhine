@@ -229,3 +229,7 @@ ENABLE_LIBRECOVERY := true
 PRODUCT_PACKAGES += \
     init.sh \
     librecovery
+
+# for Gecko to support bluetooth stack
+PRODUCT_PACKAGES += \
+    bluetooth.default
