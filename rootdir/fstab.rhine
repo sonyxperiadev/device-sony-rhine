@@ -8,5 +8,9 @@
 /dev/block/platform/msm_sdcc.1/by-name/ramdump      /misc           emmc    defaults                                                        defaults
 /dev/block/platform/msm_sdcc.1/by-name/boot         /boot           emmc    defaults                                                        defaults
 /dev/block/platform/msm_sdcc.1/by-name/FOTAKernel   /recovery       emmc    defaults                                                        defaults
+
+# Mount apps_log to /persist on b2g (it is safe)
+/dev/block/platform/msm_sdcc.1/by-name/apps_log     /persist        ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
+
 /devices/msm_sdcc.2/mmc_host*                       auto            auto    nosuid,nodev                                                    voldmanaged=sdcard1:auto,noemulatedsd
 /devices/platform/xhci-hcd                          auto            auto    nosuid,nodev                                                    voldmanaged=usbdisk:auto

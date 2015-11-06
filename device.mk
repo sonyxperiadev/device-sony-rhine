@@ -219,3 +219,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # for Gecko to support virtual home button
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.moz.has_home_button=0
+
+# for Gecko to boot to recovery
+# Ensure your fstab has a /persist partition
+RECOVERY_EXTERNAL_STORAGE := /data/media/0
+export USE_SET_METADATA := true
+ENABLE_LIBRECOVERY := true
+
+PRODUCT_PACKAGES += \
+    init.sh \
+    librecovery
