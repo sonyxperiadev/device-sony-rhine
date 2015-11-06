@@ -233,3 +233,10 @@ PRODUCT_PACKAGES += \
 # for Gecko to support bluetooth stack
 PRODUCT_PACKAGES += \
     bluetooth.default
+
+# for Gecko to support NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.moz.nfc.enabled=true
+
+PRODUCT_PACKAGES += \
+    nfcd
