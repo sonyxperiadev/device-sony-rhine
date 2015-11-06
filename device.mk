@@ -215,3 +215,7 @@ $(call add-product-dex-preopt-module-config,services,--compiler-filter=speed)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mass_storage \
     persist.data.qmi.adb_logmask=0
+
+# for Gecko to support virtual home button
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.moz.has_home_button=0
