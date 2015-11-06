@@ -248,3 +248,11 @@ PRODUCT_COPY_FILES += \
 # for Gecko to support physical buttons
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/keylayout/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl
+
+# for Gecko to support Time on reboot
+PRODUCT_PACKAGES += \
+    timekeep
+
+PRODUCT_COPY_FILES += \
+    hardware/sony/timekeep/gecko/TimeKeepService.js:system/b2g/distribution/bundles/timekeep/TimeKeepService.js \
+    hardware/sony/timekeep/gecko/chrome.manifest:system/b2g/distribution/bundles/timekeep/chrome.manifest
