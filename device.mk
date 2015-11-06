@@ -240,3 +240,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
     nfcd
+
+# for Gecko to support virtual storage
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/volume.cfg:system/etc/volume.cfg
