@@ -156,7 +156,7 @@ PRODUCT_PACKAGES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.msm8994
+    power.rhine
 
 # Keystore
 PRODUCT_PACKAGES += \
