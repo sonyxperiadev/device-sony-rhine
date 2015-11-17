@@ -281,6 +281,12 @@ on boot
     # WCNSS enable
     write /dev/wcnss_wlan 1
 
+    # Create PERFD deamon related dirs
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+
 # SONY misc
 service tad_static /system/vendor/bin/tad_static /dev/block/platform/msm_sdcc.1/by-name/TA 0,16
     user root
