@@ -250,4 +250,4 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     hardware/sony/timekeep/gecko/TimeKeepService.js:system/b2g/distribution/bundles/timekeep/TimeKeepService.js \
-    hardware/sony/timekeep/gecko/chrome.manifest:system/b2g/distribution/bundles/timekeep/chrome.manifest
+    hardware/sony/timekeep/gecko/chrome.manifest:system/b2g/distribution/bundles/timekeep/chrome.manifest \
