@@ -258,4 +258,5 @@ PRODUCT_COPY_FILES += \
 
 # for Camera
 PRODUCT_PACKAGES += \
-    libandroid
+    libandroid      \
+    fakebattery     \

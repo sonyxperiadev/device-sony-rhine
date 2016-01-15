@@ -473,3 +473,11 @@ service timekeep /system/bin/timekeep restore
    user root
    group root
    oneshot
+
+service fakebattery /system/bin/fakebattery
+    class main
+    user root
+
+service sensorservice /system/bin/sensorservice
+    class main
+    user root
