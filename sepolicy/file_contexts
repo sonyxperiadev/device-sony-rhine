@@ -27,3 +27,6 @@
 /system/vendor/bin/sensors.qcom               u:object_r:sensors_exec:s0
 
 /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr    u:object_r:sysfs_addrsetup:s0
+
+# acdb delta files
+/data/audio/acdbdata/delta(/.*)?                        u:object_r:system_data_file:s0
