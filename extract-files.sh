@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if [ -f ../../../vendor/qcom/proprietary/qcom-firmware.mk ]; then
+if [ -f ../../../vendor/qcom/proprietary/firmware/qcom-modem-firmware.mk ]; then
     echo "You already have the proprietary blobs. Nice!"
     exit 0
 fi
