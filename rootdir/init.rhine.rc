@@ -378,7 +378,7 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     oneshot
 
 # BT service
-service hciattach /system/bin/sh /system/etc/init.rhine.bt.sh
+service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class main
     user bluetooth
     group bluetooth system
