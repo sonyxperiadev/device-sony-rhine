@@ -12,23 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SONY_ROOT = device/sony/rhine/rootdir
-
 SOMC_PLATFORM := rhine
 
-DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/rhine/overlay
+SONY_ROOT = device/sony/rhine/rootdir
 
-PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
-    $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
-    $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf \
-    $(SONY_ROOT)/system/usr/idc/clearpad.idc:system/usr/idc/clearpad.idc \
-    $(SONY_ROOT)/system/usr/idc/max1187x_touchscreen_0.idc:system/usr/idc/max1187x_touchscreen_0.idc \
-    $(SONY_ROOT)/system/etc/sensors_settings:system/etc/sensors_settings
+DEVICE_PACKAGE_OVERLAYS += device/sony/rhine/overlay
 
+# Init
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.rhine:root/fstab.rhine \
     $(SONY_ROOT)/init.recovery.rhine.rc:root/init.recovery.rhine.rc \
@@ -37,19 +27,23 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.rhine.pwr.rc:root/init.rhine.pwr.rc \
     $(SONY_ROOT)/ueventd.rhine.rc:root/ueventd.rhine.rc
 
+# Media
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-    $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    $(SONY_ROOT)/system/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml
 
-# NFC
+# Qualcom WiFi
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+
+# Qualcom BT
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
+
+# IDC
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/usr/idc/clearpad.idc:system/usr/idc/clearpad.idc \
+    $(SONY_ROOT)/system/usr/idc/max1187x_touchscreen_0.idc:system/usr/idc/max1187x_touchscreen_0.idc
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -57,6 +51,10 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
     $(SONY_ROOT)/system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(SONY_ROOT)/system/usr/keylayout/mhl-rcp.kl:system/usr/keylayout/mhl-rcp.kl
+
+# Device Specific Hardware
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
 
 # NFC packages
 PRODUCT_PACKAGES += \
