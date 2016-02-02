@@ -175,6 +175,11 @@ PRODUCT_PACKAGES += \
     thermanager \
     macaddrsetup
 
+# QCOM OSS
+PRODUCT_PACKAGES += \
+    librmnetctl
+
+
 PRODUCT_PACKAGES += \
     rmt_storage
 
