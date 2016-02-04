@@ -18,15 +18,6 @@ SOMC_PLATFORM := rhine
 
 SONY_ROOT = device/sony/rhine/rootdir
 
-# Init
-PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/fstab.rhine:root/fstab.rhine \
-    $(SONY_ROOT)/init.recovery.rhine.rc:root/init.recovery.rhine.rc \
-    $(SONY_ROOT)/init.rhine.rc:root/init.rhine.rc \
-    $(SONY_ROOT)/init.rhine.usb.rc:root/init.rhine.usb.rc \
-    $(SONY_ROOT)/init.rhine.pwr.rc:root/init.rhine.pwr.rc \
-    $(SONY_ROOT)/ueventd.rhine.rc:root/ueventd.rhine.rc
-
 # Media
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
@@ -59,6 +50,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
 
+# Platform Init
+PRODUCT_PACKAGES += \
+    fstab.rhine \
+    init.rhine.pwr
+
 # NFC packages
 PRODUCT_PACKAGES += \
     nfc.rhine \
@@ -89,14 +85,6 @@ PRODUCT_PACKAGES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     keystore.msm8974
-
-# Lights
-PRODUCT_PACKAGES += \
-    lights.rhine
-
-# Simple PowerHAL
-PRODUCT_PACKAGES += \
-    power.rhine
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
