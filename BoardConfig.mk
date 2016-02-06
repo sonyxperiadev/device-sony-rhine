@@ -56,5 +56,3 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/rhine/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
-# SELinux
-BOARD_SEPOLICY_DIRS += device/sony/rhine/sepolicy
