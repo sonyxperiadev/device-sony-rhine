@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/sony/common/CommonConfig.mk
-
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_BOARD_PLATFORM := msm8974
@@ -62,3 +60,5 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_SEPOLICY_DIRS += device/sony/rhine/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+
+include device/sony/common/CommonConfig.mk
