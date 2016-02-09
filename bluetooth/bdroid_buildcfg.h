@@ -17,6 +17,9 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
+/* B2G common configuration. */
+#include "b2g_bdroid_buildcfg.h"
+
 #define BTA_HOST_INTERLEAVE_SEARCH  TRUE
 
 #endif
