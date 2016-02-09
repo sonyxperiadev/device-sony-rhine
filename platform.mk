@@ -16,7 +16,7 @@ $(call inherit-product, device/sony/common/common.mk)
 
 SOMC_PLATFORM := rhine
 
-SONY_ROOT = device/sony/rhine/rootdir
+SONY_ROOT := device/sony/rhine/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
