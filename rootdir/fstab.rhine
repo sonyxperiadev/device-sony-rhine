@@ -2,15 +2,11 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/dev/block/platform/msm_sdcc.1/by-name/system       /system         ext4    ro,barrier=1                                                    wait
-/dev/block/platform/msm_sdcc.1/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
-/dev/block/platform/msm_sdcc.1/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,encryptable=footer
-/dev/block/platform/msm_sdcc.1/by-name/ramdump      /misc           emmc    defaults                                                        defaults
-/dev/block/platform/msm_sdcc.1/by-name/boot         /boot           emmc    defaults                                                        defaults
-/dev/block/platform/msm_sdcc.1/by-name/FOTAKernel   /recovery       emmc    defaults                                                        defaults
+/dev/block/bootdevice/by-name/system       /system      ext4    ro,barrier=1                                                  wait
+/dev/block/bootdevice/by-name/cache        /cache       ext4    noatime,nosuid,nodev,barrier=1,data=ordered                   wait,check
+/dev/block/bootdevice/by-name/userdata     /data        ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc   wait,check,encryptable=footer
+/dev/block/bootdevice/by-name/boot         /boot        emmc    defaults                                                      defaults
+/dev/block/bootdevice/by-name/FOTAKernel   /recovery    emmc    defaults                                                      defaults
 
-# Mount apps_log to /persist on b2g (it is safe)
-/dev/block/platform/msm_sdcc.1/by-name/apps_log     /persist        ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
-
-/devices/msm_sdcc.2/mmc_host*                       auto            auto    nosuid,nodev                                                    voldmanaged=sdcard1:auto,noemulatedsd
-/devices/platform/xhci-hcd                          auto            auto    nosuid,nodev                                                    voldmanaged=usbdisk:auto
+/devices/msm_sdcc.2/mmc_host*              auto         auto    nosuid,nodev                                                  voldmanaged=sdcard1:auto,noemulatedsd
+/devices/platform/xhci-hcd                 auto         auto    nosuid,nodev                                                  voldmanaged=usbdisk:auto
