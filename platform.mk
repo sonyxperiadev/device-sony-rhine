@@ -88,6 +88,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
+# Qualcom FMRadio
+PRODUCT_PACKAGES += \
+    qcom.fmradio \
+    FMRadio
+
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
