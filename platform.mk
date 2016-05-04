@@ -13,6 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, device/sony/common/common.mk)
+$(call inherit-product, device/sony/common/FMRadio.mk)
 
 SOMC_PLATFORM := rhine
 
@@ -87,11 +88,6 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
-
-# Qualcom FMRadio
-PRODUCT_PACKAGES += \
-    qcom.fmradio \
-    FMRadio
 
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
