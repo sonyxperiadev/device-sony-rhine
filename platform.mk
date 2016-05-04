@@ -13,6 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, device/sony/common/common.mk)
+$(call inherit-product, device/sony/common/FMRadio.mk)
 
 SOMC_PLATFORM := rhine
 
