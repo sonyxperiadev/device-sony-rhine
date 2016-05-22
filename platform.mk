@@ -93,6 +93,10 @@ PRODUCT_PACKAGES += \
     qcom.fmradio \
     FMRadio
 
+# SimToolKit
+PRODUCT_PACKAGES += \
+    Stk
+
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
