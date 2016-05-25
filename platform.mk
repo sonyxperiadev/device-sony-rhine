@@ -93,8 +93,9 @@ PRODUCT_PACKAGES += \
     qcom.fmradio \
     FMRadio
 
-# SimToolKit
+# Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
+    InCallUI \
     Stk
 
 # RILD
