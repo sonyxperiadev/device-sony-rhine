@@ -65,6 +65,9 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
+# Props for hotplugging
+TARGET_SYSTEM_PROP += device/sony/rhine/system.prop
+
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/rhine/sepolicy
 
