@@ -69,6 +69,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 TARGET_SYSTEM_PROP += device/sony/rhine/system.prop
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/sony/rhine/sepolicy
+include device/sony/sepolicy/sepolicy.mk
 
 include device/sony/common/CommonConfig.mk
