@@ -114,9 +114,7 @@
 /sys/devices/01-qcom,leds-d800/leds/wled:backlight max_brightness 0664 system system
 /sys/devices/01-qcom,leds-d800/leds/wled:backlight brightness     0664 system system
 
-# IR Remote
-/dev/ttyHSL2 0660 system system /sys/devices/platform/ir_remote_control enable 0220 system system
-
+# Graphics Permissions
 /sys/devices/virtual/graphics/fb1/avi_itc             0664 system graphics
 /sys/devices/virtual/graphics/fb1/avi_cn0_1           0664 system graphics
 /sys/devices/virtual/graphics/fb1/hpd                 0664 system graphics
