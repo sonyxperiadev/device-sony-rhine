@@ -101,9 +101,7 @@
 /dev/wcnss_ctrl           0660   system     system
 
 # NFC
-/dev/nfc-nci              0660   nfc        nfc
 /dev/pn544                0660   nfc        nfc
-/dev/pn547                0660   nfc        nfc
 
 # LED
 /sys/devices/01-qcom,leds-d000/leds/led:* max_brightness          0664 system system
