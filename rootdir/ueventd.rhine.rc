@@ -98,6 +98,9 @@
 /dev/rfkill                                 0660 bluetooth net_bt_stack
 /dev/ttyHSL0                                0660 bluetooth net_bt_stack
 
+# FM
+/sys/module/radio_iris_transport/parameters/fmsmd_set 0660 system system
+
 # WLAN
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
