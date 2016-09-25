@@ -21,6 +21,7 @@ on init
 
 on fs
     mount_all ./fstab.rhine
+    swapon_all ./fstab.rhine
     write /sys/kernel/boot_adsp/boot 1
 
 on boot
