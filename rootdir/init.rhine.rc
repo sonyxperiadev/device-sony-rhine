@@ -19,15 +19,6 @@ import init.rhine.pwr.rc
 on init
     symlink /dev/block/platform/msm_sdcc.1 /dev/block/bootdevice
 
-on fs
-    mount_all ./fstab.rhine
-    swapon_all ./fstab.rhine
-    write /sys/kernel/boot_adsp/boot 1
-
-on boot
-    # WCNSS enable
-    write /dev/wcnss_wlan 1
-
     # add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0
@@ -43,6 +34,15 @@ on boot
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/top-app/cpus 0-3
+
+on fs
+    mount_all ./fstab.rhine
+    swapon_all ./fstab.rhine
+    write /sys/kernel/boot_adsp/boot 1
+
+on boot
+    # WCNSS enable
+    write /dev/wcnss_wlan 1
 
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
