@@ -78,15 +78,6 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-# BT service
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class late_start
-    user bluetooth
-    group bluetooth system
-    disabled
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
 on property:vold.post_fs_data_done=1
     # Generate Bluetooth MAC address file only when /data is ready
     start macaddrsetup
@@ -95,7 +86,7 @@ on property:vold.post_fs_data_done=1
     chown bluetooth bluetooth /data/etc/bluetooth_bdaddr
 
 on property:bluetooth.hciattach=true
-    start hciattach
+    setprop bluetooth.status on
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
