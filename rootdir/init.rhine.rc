@@ -41,12 +41,17 @@ on fs
     write /sys/kernel/boot_adsp/boot 1
 
 on boot
+    # Bluetooth
+    chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+
     # WCNSS enable
     write /dev/wcnss_wlan 1
 
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
-    user root
+    class core
+    user system
+    group system bluetooth
     disabled
     oneshot
     writepid /dev/cpuset/system-background/tasks
@@ -83,9 +88,6 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 on property:vold.post_fs_data_done=1
     # Generate Bluetooth MAC address file only when /data is ready
     start macaddrsetup
-    # Wait for the file to be created by macaddrsetup
-    wait /data/etc/bluetooth_bdaddr
-    chown bluetooth bluetooth /data/etc/bluetooth_bdaddr
 
 on property:bluetooth.hciattach=true
     setprop bluetooth.status on
