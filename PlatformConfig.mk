@@ -44,6 +44,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_RECOVERY_FSTAB = device/sony/rhine/rootdir/fstab.rhine
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Wi-Fi definitions for Qualcomm solution
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
