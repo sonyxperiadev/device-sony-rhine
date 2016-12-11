@@ -29,7 +29,7 @@ on boot
     chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
 
     # WCNSS enable
-    write /dev/wcnss_wlan 1
+    write /dev/wcnss_wlan ""
 
     # add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon
