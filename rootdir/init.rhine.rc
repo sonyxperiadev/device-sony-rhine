@@ -45,7 +45,7 @@ on boot
     chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
 
     # WCNSS enable
-    write /dev/wcnss_wlan 1
+    write /dev/wcnss_wlan ""
 
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
