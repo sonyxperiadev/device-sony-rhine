@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/rhine
+
 $(call inherit-product, device/sony/common/common.mk)
 
 SOMC_PLATFORM := rhine
 
-SONY_ROOT := device/sony/rhine/rootdir
+SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
