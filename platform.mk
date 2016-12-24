@@ -96,6 +96,11 @@ PRODUCT_PACKAGES += \
     InCallUI \
     Stk
 
+# Camera HAL1 hack on 7.x
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
