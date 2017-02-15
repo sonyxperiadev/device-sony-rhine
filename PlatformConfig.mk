@@ -47,9 +47,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_RECOVERY_FSTAB = $(PLATFORM_COMMON_PATH)/rootdir/fstab.rhine
 
-# Camera HAL1 hack on 7.x
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-
 # Wi-Fi definitions for Qualcomm solution
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
