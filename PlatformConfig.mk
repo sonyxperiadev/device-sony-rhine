@@ -71,9 +71,6 @@ BOARD_HAVE_ALTERNATE_FM := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
-# Props for hotplugging
-TARGET_SYSTEM_PROP += $(PLATFORM_COMMON_PATH)/system.prop
-
 # SELinux
 BOARD_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy
 
