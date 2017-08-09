@@ -17,7 +17,21 @@ import init.common.usb-legacy.rc
 import init.rhine.pwr.rc
 
 on init
+    write /sys/block/zram0/max_comp_streams 4
+
+on fs
     symlink /dev/block/platform/msm_sdcc.1 /dev/block/bootdevice
+
+    mount_all ./fstab.rhine
+    swapon_all ./fstab.rhine
+    write /sys/kernel/boot_adsp/boot 1
+
+on boot
+    # Bluetooth
+    chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
+
+    # WCNSS enable
+    write /dev/wcnss_wlan 1
 
     # add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon
@@ -34,18 +48,6 @@ on init
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/top-app/cpus 0-3
-
-on fs
-    mount_all ./fstab.rhine
-    swapon_all ./fstab.rhine
-    write /sys/kernel/boot_adsp/boot 1
-
-on boot
-    # Bluetooth
-    chown system system /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
-
-    # WCNSS enable
-    write /dev/wcnss_wlan 1
 
 # OSS WLAN and BT MAC setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
@@ -108,4 +110,3 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
-
