@@ -1,4 +1,4 @@
-ifeq ($(filter-out amami honami togari,$(TARGET_DEVICE)),)
+ifeq (rhine,$(PRODUCT_PLATFORM))
 
 LOCAL_PATH := $(call my-dir)
 
